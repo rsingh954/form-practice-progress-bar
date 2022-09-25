@@ -1,38 +1,66 @@
-.App {
-  text-align: center;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app{
   display: flex;
   flex-direction: column;
+  align-items: stretch;
+  margin-top: 10vh;
+  padding: 48px;
+  gap: 16px;
+  background-color: #fff;
+  border: solid 2px black;
+  border-radius: 16px;
+}
+body{
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: url("https://images.pexels.com/photos/1323550/pexels-photo-1323550.jpeg?cs=srgb&dl=pexels-simon-berger-1323550.jpg&fm=jpg");
+  
+}
+input, option{
+  margin:8px 0; 
+  width: 100%;
+  border: 2px solid #eee;
+  padding:8px;
+  border: 2px solid #eee;
+  border-radius:10px;
+}
+select{
+  width: 100%;
+  margin:8px 0; 
+  padding:10px;
+  border-radius:8px;
+  background-color: white;
+  border: 2px solid #eee;
 }
 
-.App-link {
-  color: #61dafb;
-}
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 8px 0; 
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+button {
+
+  /* remove default behavior */
+  appearance:none;
+  -webkit-appearance:none;
+
+  /* usual styles */
+  padding:10px;
+  border:none;
+  background-color:#0085CA ;
+  color:#fff;
+  font-weight:600;
+  border-radius:5px;
+  width:100%;
+}
+button:hover{
+  transform: scale(110%);
 }
