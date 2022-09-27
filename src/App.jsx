@@ -24,6 +24,15 @@ function App() {
   let [category, setCategory] = useState("")
   let [email, setEmail] = useState("")
   let [objData, setObjData] = useState({})
+  let [signedIn, setSignedIn] = useState(false)
+
+  function UserIsSignedIn() {
+    return(
+      <div className='app success'>
+        Application has been submitted
+      </div>
+    )
+  } 
 
   const handleName = (e) => {
     e.preventDefault()
@@ -79,12 +88,13 @@ function App() {
   }
   const onSubmit = e => {
     e.preventDefault()
-    setObjData({name: name, docType: docType, category: category, email: email})
-    //validate data here
-    console.log(objData)
+    setObjData({...{name: name, docType: docType, category: category, email: email}, ...objData})
+    setSignedIn(true)
   }
   return (
-    <div className="app">
+    <>
+    { signedIn ? <UserIsSignedIn />:
+      <div className="app">
       <h1>Document Information</h1>
       <ProgressBar completed={complete} bgcolor={"#0085CA"} />
       <form>
@@ -92,6 +102,7 @@ function App() {
         Document Name:
         <br />
         <input
+          className='docName'
           type='text'
           name='name'
           onChange={handleName}
@@ -145,6 +156,8 @@ function App() {
       </form>
     </div>
 
+    }
+</>
   );
 }
 
